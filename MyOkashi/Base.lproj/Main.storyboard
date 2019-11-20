@@ -1,0 +1,83 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="14490.70" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="BYZ-38-t0r">
+    <device id="retina6_1" orientation="portrait">
+        <adaptation id="fullscreen"/>
+    </device>
+    <dependencies>
+        <deployment identifier="iOS"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="14490.49"/>
+        <capability name="Safe area layout guides" minToolsVersion="9.0"/>
+        <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
+    </dependencies>
+    <scenes>
+        <!--View Controller-->
+        <scene sceneID="tne-QT-ifu">
+            <objects>
+                <viewController id="BYZ-38-t0r" customClass="ViewController" customModule="MyOkashi" customModuleProvider="target" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="8bC-Xf-vdC">
+                        <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <searchBar contentMode="redraw" translatesAutoresizingMaskIntoConstraints="NO" id="KHi-Or-gmn">
+                                <rect key="frame" x="0.0" y="44" width="414" height="56"/>
+                                <textInputTraits key="textInputTraits"/>
+                                <connections>
+                                    <outlet property="delegate" destination="BYZ-38-t0r" id="Yj4-kk-a7j"/>
+                                </connections>
+                            </searchBar>
+                            <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="28" sectionFooterHeight="28" translatesAutoresizingMaskIntoConstraints="NO" id="4nx-iV-3hJ">
+                                <rect key="frame" x="0.0" y="100" width="414" height="762"/>
+                                <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                <prototypes>
+                                    <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="default" indentationWidth="10" reuseIdentifier="okashiCell" textLabel="tZ0-JN-8q9" style="IBUITableViewCellStyleDefault" id="uan-f3-GBr">
+                                        <rect key="frame" x="0.0" y="28" width="414" height="44"/>
+                                        <autoresizingMask key="autoresizingMask"/>
+                                        <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" preservesSuperviewLayoutMargins="YES" insetsLayoutMarginsFromSafeArea="NO" tableViewCell="uan-f3-GBr" id="YvP-l3-6dc">
+                                            <rect key="frame" x="0.0" y="0.0" width="414" height="43.5"/>
+                                            <autoresizingMask key="autoresizingMask"/>
+                                            <subviews>
+                                                <label opaque="NO" multipleTouchEnabled="YES" contentMode="left" insetsLayoutMarginsFromSafeArea="NO" text="Title" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" id="tZ0-JN-8q9">
+                                                    <rect key="frame" x="20" y="0.0" width="374" height="43.5"/>
+                                                    <autoresizingMask key="autoresizingMask"/>
+                                                    <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                                    <nil key="textColor"/>
+                                                    <nil key="highlightedColor"/>
+                                                </label>
+                                            </subviews>
+                                        </tableViewCellContentView>
+                                    </tableViewCell>
+                                </prototypes>
+                            </tableView>
+                        </subviews>
+                        <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                        <constraints>
+                            <constraint firstItem="4nx-iV-3hJ" firstAttribute="trailing" secondItem="6Tk-OE-BBY" secondAttribute="trailing" id="8ek-2I-PD1"/>
+                            <constraint firstItem="4nx-iV-3hJ" firstAttribute="bottom" secondItem="6Tk-OE-BBY" secondAttribute="bottom" id="F3j-h0-IwI"/>
+                            <constraint firstItem="KHi-Or-gmn" firstAttribute="top" secondItem="6Tk-OE-BBY" secondAttribute="top" id="GgR-qM-ac5"/>
+                            <constraint firstItem="KHi-Or-gmn" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" id="OQg-ON-ctd"/>
+                            <constraint firstItem="4nx-iV-3hJ" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" id="PNZ-an-ELe"/>
+                            <constraint firstItem="KHi-Or-gmn" firstAttribute="trailing" secondItem="6Tk-OE-BBY" secondAttribute="trailing" id="Qze-TA-pUR"/>
+                            <constraint firstItem="4nx-iV-3hJ" firstAttribute="top" secondItem="6Tk-OE-BBY" secondAttribute="top" constant="56" id="evl-MS-2JP"/>
+                        </constraints>
+                        <viewLayoutGuide key="safeArea" id="6Tk-OE-BBY"/>
+                    </view>
+                    <connections>
+                        <outlet property="searchDisplayController" destination="Btz-wd-6wj" id="14u-sW-Syj"/>
+                        <outlet property="searchText" destination="KHi-Or-gmn" id="uf6-bS-p4e"/>
+                        <outlet property="tableView" destination="4nx-iV-3hJ" id="bx5-q9-M7U"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
+                <searchDisplayController id="Btz-wd-6wj">
+                    <connections>
+                        <outlet property="delegate" destination="BYZ-38-t0r" id="4KS-MX-eES"/>
+                        <outlet property="searchContentsController" destination="BYZ-38-t0r" id="GjM-KJ-ulE"/>
+                        <outlet property="searchResultsDataSource" destination="BYZ-38-t0r" id="0Ol-lb-D61"/>
+                        <outlet property="searchResultsDelegate" destination="BYZ-38-t0r" id="1V3-sp-Wwi"/>
+                    </connections>
+                </searchDisplayController>
+            </objects>
+            <point key="canvasLocation" x="137.68115942028987" y="137.94642857142856"/>
+        </scene>
+    </scenes>
+</document>
