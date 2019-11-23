@@ -5,7 +5,6 @@
 //  Created by Raphael on 2019/11/17.
 //  Copyright © 2019 takahashi. All rights reserved.
 //
-
 import UIKit
 import SafariServices
 
